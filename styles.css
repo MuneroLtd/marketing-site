@@ -336,6 +336,18 @@ header.scrolled nav {
     color: var(--text-primary);
 }
 
+.email-link {
+    font-size: 1.2rem;
+    color: var(--accent-cyan);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.email-link:hover {
+    color: var(--accent-purple);
+}
+
 .company-link {
     display: inline-block;
     margin-top: 15px;

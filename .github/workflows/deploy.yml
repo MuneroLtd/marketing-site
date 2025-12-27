@@ -22,7 +22,7 @@ jobs:
 
       - name: Sync to S3
         run: |
-          aws s3 sync . s3://hosted-static-sites/munero.co..uk/ \
+          aws s3 sync . s3://munero.co.uk/ \
             --exclude "*" \
             --include "index.html" \
             --include "styles.css" \
@@ -32,22 +32,22 @@ jobs:
       - name: Set cache headers
         run: |
           # HTML - no cache
-          aws s3 cp s3://hosted-static-sites/munero.co..uk/index.html \
-            s3://hosted-static-sites/munero.co..uk/index.html \
+          aws s3 cp s3://munero.co.uk/index.html \
+            s3://munero.co.uk/index.html \
             --metadata-directive REPLACE \
             --cache-control "no-cache, no-store, must-revalidate" \
             --content-type "text/html"
 
           # CSS - cache for 7 days
-          aws s3 cp s3://hosted-static-sites/munero.co..uk/styles.css \
-            s3://hosted-static-sites/munero.co..uk/styles.css \
+          aws s3 cp s3://munero.co.uk/styles.css \
+            s3://munero.co.uk/styles.css \
             --metadata-directive REPLACE \
             --cache-control "public, max-age=604800" \
             --content-type "text/css"
 
           # Images - cache for 30 days
-          aws s3 cp s3://hosted-static-sites/munero.co..uk/assets/ \
-            s3://hosted-static-sites/munero.co..uk/assets/ \
+          aws s3 cp s3://munero.co.uk/assets/ \
+            s3://munero.co.uk/assets/ \
             --recursive \
             --metadata-directive REPLACE \
             --cache-control "public, max-age=2592000, immutable"

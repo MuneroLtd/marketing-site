@@ -112,10 +112,7 @@ header.scrolled nav {
 .logo span {
     font-size: 1.5rem;
     font-weight: 700;
-    background: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text-primary);
 }
 
 .nav-links {
@@ -155,12 +152,10 @@ header.scrolled nav {
 
 .hero h1 {
     font-size: 3.5rem;
-    font-weight: 800;
-    margin-bottom: 20px;
-    background: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
 }
 
 .hero p {
@@ -171,19 +166,19 @@ header.scrolled nav {
 
 .cta-button {
     display: inline-block;
-    padding: 15px 40px;
-    background: var(--accent-gradient);
-    color: white;
+    padding: 14px 32px;
+    background: var(--text-primary);
+    color: var(--bg-primary);
     text-decoration: none;
-    border-radius: 50px;
+    border-radius: 8px;
     font-weight: 600;
-    font-size: 1.1rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    font-size: 1rem;
+    transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 30px rgba(139, 92, 246, 0.3);
+    background: var(--text-secondary);
+    transform: translateY(-1px);
 }
 
 /* Services Section */
@@ -197,11 +192,10 @@ header.scrolled nav {
 .contact h2 {
     text-align: center;
     font-size: 2.5rem;
+    font-weight: 600;
     margin-bottom: 60px;
-    background: var(--accent-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
 }
 
 .services-grid {
@@ -224,18 +218,19 @@ header.scrolled nav {
 }
 
 .service-icon {
-    width: 80px;
-    height: 80px;
-    background: var(--accent-gradient);
-    border-radius: 16px;
+    width: 64px;
+    height: 64px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 25px;
+    margin-bottom: 24px;
 }
 
 .service-icon svg {
-    color: white;
+    color: var(--text-secondary);
 }
 
 .service-card h3 {

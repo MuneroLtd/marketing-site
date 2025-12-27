@@ -224,18 +224,19 @@ header.scrolled nav {
 .hero {
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9)), url('assets/hero.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    padding-top: 220px;
+    padding-top: 280px;
 }
 
 .hero-content {
     text-align: center;
     max-width: 800px;
+    padding-bottom: 100px;
 }
 
 .hero h1 {

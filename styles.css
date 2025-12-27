@@ -60,14 +60,14 @@ header.scrolled {
 }
 
 .header-logo-centered img {
-    width: 100px !important;
-    height: 100px !important;
-    max-width: 100px !important;
-    max-height: 100px !important;
-    min-width: 100px;
-    min-height: 100px;
-    border-radius: 16px;
-    box-shadow: 0 8px 30px rgba(139, 92, 246, 0.3);
+    width: 200px !important;
+    height: 200px !important;
+    max-width: 200px !important;
+    max-height: 200px !important;
+    min-width: 200px;
+    min-height: 200px;
+    border-radius: 24px;
+    box-shadow: 0 16px 50px rgba(0, 0, 0, 0.5);
     object-fit: contain;
 }
 
@@ -104,9 +104,9 @@ header.scrolled nav {
 }
 
 .logo img {
-    width: 50px;
-    height: 50px;
-    border-radius: 10px;
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
 }
 
 .logo span {

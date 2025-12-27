@@ -5,23 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Munero Limited - Software Development Services and SaaS Products">
     <title>Munero Limited | Software Development & SaaS Solutions</title>
-    <link rel="stylesheet" href="styles.css?v=8">
+    <link rel="stylesheet" href="styles.css?v=9">
     <link rel="icon" type="image/png" href="assets/logo.png">
 </head>
 <body>
     <header id="header">
-        <div class="header-logo-centered">
-            <div class="animated-logo">
-                <span class="logo-m">M</span>
-            </div>
-        </div>
         <nav class="container">
-            <div class="logo">
-                <div class="animated-logo small">
-                    <span class="logo-m">M</span>
+            <a href="/" class="logo">
+                <div class="logo-icon">
+                    <span>M</span>
                 </div>
-                <span>Munero</span>
-            </div>
+                <span class="logo-text">Munero</span>
+            </a>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#products">Products</a></li>
@@ -118,8 +113,8 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <div class="animated-logo tiny">
-                        <span class="logo-m">M</span>
+                    <div class="logo-icon small">
+                        <span>M</span>
                     </div>
                     <span>Munero Limited</span>
                 </div>
@@ -130,18 +125,12 @@
 
     <script>
         const header = document.getElementById('header');
-        let lastScroll = 0;
-
         window.addEventListener('scroll', () => {
-            const currentScroll = window.pageYOffset;
-
-            if (currentScroll > 100) {
+            if (window.pageYOffset > 50) {
                 header.classList.add('scrolled');
             } else {
                 header.classList.remove('scrolled');
             }
-
-            lastScroll = currentScroll;
         });
     </script>
 </body>

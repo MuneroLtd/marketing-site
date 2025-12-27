@@ -55,15 +55,18 @@ header.scrolled {
 .header-logo-centered {
     display: flex;
     justify-content: center;
-    padding: 30px 20px;
+    padding: 20px;
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .header-logo-centered img {
-    width: 120px;
-    height: 120px;
-    border-radius: 20px;
-    box-shadow: 0 10px 40px rgba(139, 92, 246, 0.3);
+    width: 60px;
+    height: 60px;
+    max-width: 60px;
+    max-height: 60px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(139, 92, 246, 0.3);
+    object-fit: contain;
 }
 
 header.scrolled .header-logo-centered {

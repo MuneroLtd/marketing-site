@@ -1,9 +1,14 @@
 FROM nginx:alpine
 
 # Copy static files to nginx html directory
-COPY --chmod=644 index.html /usr/share/nginx/html/
-COPY --chmod=644 styles.css /usr/share/nginx/html/
-COPY --chmod=644 assets/ /usr/share/nginx/html/assets/
+COPY index.html /usr/share/nginx/html/
+COPY styles.css /usr/share/nginx/html/
+COPY assets/ /usr/share/nginx/html/assets/
+
+# Fix permissions (files 644, directories 755)
+RUN chmod 644 /usr/share/nginx/html/*.html /usr/share/nginx/html/*.css && \
+    chmod 755 /usr/share/nginx/html/assets && \
+    chmod 644 /usr/share/nginx/html/assets/*
 
 # Custom nginx configuration for better caching and security
 RUN echo 'server { \

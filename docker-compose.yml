@@ -1,0 +1,18 @@
+services:
+  munero-website:
+    build: .
+    container_name: munero-website
+    restart: unless-stopped
+    networks:
+      - traefik_demosrv
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.munero.rule=Host(`munero.demosrv.uk`)"
+      - "traefik.http.routers.munero.entrypoints=websecure"
+      - "traefik.http.routers.munero.tls=true"
+      - "traefik.http.routers.munero.tls.certresolver=letsencrypt"
+      - "traefik.http.services.munero.loadbalancer.server.port=80"
+
+networks:
+  traefik_demosrv:
+    external: true

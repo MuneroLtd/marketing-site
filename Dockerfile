@@ -1,0 +1,36 @@
+FROM nginx:alpine
+
+# Copy static files to nginx html directory
+COPY --chmod=644 index.html /usr/share/nginx/html/
+COPY --chmod=644 styles.css /usr/share/nginx/html/
+COPY --chmod=644 assets/ /usr/share/nginx/html/assets/
+
+# Custom nginx configuration for better caching and security
+RUN echo 'server { \
+    listen 80; \
+    server_name _; \
+    root /usr/share/nginx/html; \
+    index index.html; \
+    \
+    location / { \
+        try_files $uri $uri/ /index.html; \
+    } \
+    \
+    location ~* \.(png|jpg|jpeg|gif|ico|svg|woff|woff2)$ { \
+        expires 30d; \
+        add_header Cache-Control "public, immutable"; \
+    } \
+    \
+    location ~* \.(css|js)$ { \
+        expires 7d; \
+        add_header Cache-Control "public"; \
+    } \
+    \
+    add_header X-Frame-Options "SAMEORIGIN" always; \
+    add_header X-Content-Type-Options "nosniff" always; \
+    add_header X-XSS-Protection "1; mode=block" always; \
+}' > /etc/nginx/conf.d/default.conf
+
+EXPOSE 80
+
+CMD ["nginx", "-g", "daemon off;"]

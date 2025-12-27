@@ -1,0 +1,6 @@
+.git
+.gitignore
+.playwright-mcp
+*.md
+docker-compose.yml
+.dockerignore

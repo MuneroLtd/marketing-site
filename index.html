@@ -9,7 +9,10 @@
     <link rel="icon" type="image/png" href="assets/logo.png">
 </head>
 <body>
-    <header>
+    <header id="header">
+        <div class="header-logo-centered">
+            <img src="assets/logo.png" alt="Munero Limited Logo">
+        </div>
         <nav class="container">
             <div class="logo">
                 <img src="assets/logo.png" alt="Munero Limited Logo">
@@ -118,5 +121,22 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        const header = document.getElementById('header');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > 100) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+
+            lastScroll = currentScroll;
+        });
+    </script>
 </body>
 </html>

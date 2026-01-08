@@ -252,6 +252,9 @@ header.scrolled nav {
     border: 1px solid var(--border-color);
     overflow: hidden;
     transition: transform 0.3s ease, border-color 0.3s ease;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
 }
 
 .product-card:hover {
@@ -259,38 +262,32 @@ header.scrolled nav {
     border-color: var(--accent-purple);
 }
 
-.product-logo {
-    padding: 30px 40px 0;
+.product-header {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
 }
 
-.product-logo img {
-    height: 40px;
+.product-header h3 {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.product-logo {
+    height: 50px;
     width: auto;
     object-fit: contain;
 }
 
-.product-info {
-    padding: 40px;
-}
-
-.product-logo + .product-info {
-    padding-top: 20px;
-}
-
-.product-info h3 {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    color: var(--text-primary);
-}
-
-.product-info p {
+.product-description {
     color: var(--text-secondary);
     margin-bottom: 25px;
+    flex-grow: 1;
 }
 
-.product-info a {
+.product-description a {
     color: var(--accent-cyan);
 }
 
@@ -304,6 +301,7 @@ header.scrolled nav {
     border-radius: 50px;
     font-weight: 600;
     transition: background 0.3s ease, color 0.3s ease;
+    align-self: flex-end;
 }
 
 .product-link:hover {
@@ -447,8 +445,12 @@ footer {
 
     .service-card,
     .contact-card,
-    .product-info {
+    .product-card {
         padding: 30px;
+    }
+
+    .product-header h3 {
+        font-size: 1.4rem;
     }
 
     .contact-info.two-col {

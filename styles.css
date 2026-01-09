@@ -83,6 +83,7 @@ header.scrolled nav {
 }
 
 .logo-icon span {
+    font-family: 'Space Grotesk', sans-serif;
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--bg-primary);
@@ -96,12 +97,6 @@ header.scrolled nav {
 
 .logo-icon.small span {
     font-size: 1rem;
-}
-
-.logo-text {
-    font-size: 1.4rem;
-    font-weight: 600;
-    color: var(--text-primary);
 }
 
 .nav-links {
@@ -137,6 +132,15 @@ header.scrolled nav {
 .hero-content {
     text-align: center;
     max-width: 800px;
+}
+
+.hero-brand {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    letter-spacing: -0.03em;
 }
 
 .hero h1 {
@@ -414,6 +418,7 @@ footer {
 }
 
 .footer-logo span {
+    font-family: 'Space Grotesk', sans-serif;
     font-weight: 600;
     color: var(--text-secondary);
 }
@@ -427,6 +432,10 @@ footer {
 @media (max-width: 768px) {
     .nav-links {
         display: none;
+    }
+
+    .hero-brand {
+        font-size: 3rem;
     }
 
     .hero h1 {
@@ -459,6 +468,10 @@ footer {
 }
 
 @media (max-width: 480px) {
+    .hero-brand {
+        font-size: 2.5rem;
+    }
+
     .hero h1 {
         font-size: 2rem;
     }

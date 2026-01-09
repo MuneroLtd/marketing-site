@@ -56,7 +56,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 25px 20px 20px;
     transition: all 0.3s ease;
 }
 
@@ -120,13 +120,13 @@ header.scrolled nav {
 .hero {
     min-height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9)), url('assets/hero.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    padding-top: 80px;
+    padding-top: 15vh;
 }
 
 .hero-content {

@@ -236,6 +236,14 @@ header.scrolled nav.container {
     color: var(--text-secondary);
 }
 
+.products-intro {
+    color: var(--text-secondary);
+    font-size: 1.15rem;
+    max-width: 640px;
+    margin: -30px auto 40px;
+    text-align: center;
+}
+
 /* Products Section */
 .products {
     padding: 100px 0;

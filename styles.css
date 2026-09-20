@@ -252,7 +252,10 @@ header.scrolled nav.container {
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    /* auto-fit + a column cap, not repeat(2, 1fr): a lone product then centres at
+       card width instead of sitting in the left half of a two-column track. */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 535px));
+    justify-content: center;
     gap: 30px;
     max-width: 1100px;
     margin: 0 auto;

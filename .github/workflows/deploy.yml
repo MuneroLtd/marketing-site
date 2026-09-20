@@ -45,9 +45,21 @@ jobs:
             --cache-control "public, max-age=604800" \
             --content-type "text/css"
 
-          # Images - cache for 30 days
-          aws s3 cp s3://munero.co.uk/assets/ \
-            s3://munero.co.uk/assets/ \
-            --recursive \
-            --metadata-directive REPLACE \
-            --cache-control "public, max-age=2592000, immutable"
+          # Assets - cache for 30 days.
+          # Per type, not one blanket --recursive pass: REPLACE drops the
+          # content type the sync inferred, and re-copying without setting it
+          # again leaves every asset as binary/octet-stream. Browsers sniff
+          # PNG/JPEG bytes so those still render, but an SVG in an <img> is
+          # never sniffed -- it just fails to paint.
+          for spec in "png:image/png" "svg:image/svg+xml" "jpg:image/jpeg" "webp:image/webp"; do
+            ext="${spec%%:*}"
+            type="${spec#*:}"
+            aws s3 cp s3://munero.co.uk/assets/ \
+              s3://munero.co.uk/assets/ \
+              --recursive \
+              --exclude "*" \
+              --include "*.${ext}" \
+              --metadata-directive REPLACE \
+              --cache-control "public, max-age=2592000, immutable" \
+              --content-type "${type}"
+          done
